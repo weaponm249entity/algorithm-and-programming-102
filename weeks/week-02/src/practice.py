@@ -52,7 +52,7 @@ class BinaryTree():                         #   Create a class to manipulate and
     def searchintermediate(self, currentNode, target):  #   The Searching Algorithm
         if currentNode is None:                                             #   This stops the recursion if the searching algorithm hit a empty Node spot.      
             return None
-        if currentNode.text == target:                                      #   We found the Node!
+        if currentNode.text == target:                                    #   We found the Node!
             return currentNode
         left_result = self.searchintermediate(currentNode.left, target)     #
         if left_result:                                                     #   We search the tree going left everytime until we either hit the wanted node or we hit a empty node
@@ -136,7 +136,7 @@ class BinaryTree():                         #   Create a class to manipulate and
             if node.left is None:                                                   #
                 return node.right                                                   #   In this case the children of the main parent node either had one children tree or had no children at all
             elif node.right is None:                                                #   this is the most simple case to solve so we either just delete the node entirely(No Children Present) or
-                return node.left                                                    #   Assign the Sole Child as the new Parent and move on.
+                return node.left                                                   #   Assign the Sole Child as the new Parent and move on.
             
             successorChild = self.getMin(node.right)                                #
                                                                                     #   In this case we have two seperate children so now we have to make a decision who gets to be the successor parent.
@@ -174,13 +174,15 @@ if __name__ == "__main__":
 
 
     print(f"Tree Size: {MyTree.size()}")                                            #   Expected: 11
-    print(f"Tree Height: {MyTree.height()}")                                        #   Expected: 4
+    print(f"Tree Height: {MyTree.height()}")                                        #   Expected: 6
 
     # Testing getValue
 
-    result = MyTree.getValue("HELSINKI")
+    searchTarget = "Helsinki"
+
+    result = MyTree.getValue(searchTarget)                                            #   Expected: 128
     if result:
-        print(result)                                                               #   Expected: 128
+        print(f"Value of {searchTarget} is {result}.")
 
     # Testing deleteDPO (Destructive)
     # Lets obliterate the "Apple" branch (80000). 
@@ -197,5 +199,5 @@ if __name__ == "__main__":
 
     # Final Check
 
-    final_search = MyTree.getValue("HELSINKI")
+    final_search = MyTree.getValue("HELSINKI")                                      #   Expected: Yes
     print(f"Is Helsinki still here? {'Yes' if final_search else 'No'}")
