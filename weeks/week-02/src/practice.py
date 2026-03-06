@@ -1,12 +1,3 @@
-
-#
-#   This branch is cloned from https://github.com/drmehmetbilen/algorithm-and-programming-102
-#   Please checkout the main repository for updates!
-#   
-#   Repo owner : drmehmetbilen
-#   Pull request made by : weaponm249entity aka. Onur Yüksel
-#
-
 # Binary Search Tree 
 # Node and Tree Class Definitations.    Complete!
 # Add New Node.                         Complete and Tweaked!
